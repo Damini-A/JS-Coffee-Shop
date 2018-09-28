@@ -127,10 +127,22 @@
         "brew": 2.05,
         "espresso": 3.25,
         "latte": 4.15,
-        "hot chocolate": 2.50
+        "hot-chocolate": 2.50
     };
 
+    function revenue(arr) {
 
+       let Total = 0;
+
+       for (let coffee of arr) {
+            Total += prices[coffee];
+       }
+
+      
+       return Total;
+
+    }
+    revenue(drinksOrdered);
 
 </script>
 
