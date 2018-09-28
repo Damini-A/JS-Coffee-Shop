@@ -51,35 +51,71 @@
 
     // Set these variables to their DOM elements
 
-    // let coffeeImage;
-    // coffeeImage = document.querySelector('#coffee-image');
-    // coffeeImage.setAttribute('src','static/coffee_beans.jpg');
-
-    // function makeCoffee() {
-
-    //     coffeeImage.setAttribute('src','static/coffee_mug.jpg')
-    //     setTimeout(function() {
-    //         coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');},1500);
-
-    //     }
-
-    // coffeeImage.addEventListener('click',setTimeout(makeCoffee, 3000));
-
-////////////// in JQuery //////////////
-
     let coffeeImage;
-    coffeeImage = $('#coffee-image');
-    coffeeImage.attr('src','static/coffee_beans.jpg');
+    coffeeImage = document.querySelector('#coffee-image');
+    coffeeImage.setAttribute('src','static/coffee_beans.jpg');
 
-    function makeCoffee() {
+    let drinksOrdered = [];
 
-        coffeeImage.attr('src','static/coffee_machine.jpg')
+    function makeCoffee(drinktype) {
+        
+        drinksOrdered.push(drinktype);
+        console.log(drinksOrdered);
+
         setTimeout(function() {
-            coffeeImage.attr('src', 'static/coffee_mug.jpg');},1500);
+            coffeeImage.setAttribute('src','static/coffee_machine.jpg');},3000);
+        setTimeout(function() {
+            coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');},5000);
 
         }
 
-    coffeeImage.addEventListener('click',setTimeout(makeCoffee, 3000));
+    coffeeImage.addEventListener('click', function() {makeCoffee('brew');});
+
+
+    let espresso = document.querySelector('#espresso');
+    let latte = document.querySelector('#latte');
+    let hot_chocolate = document.querySelector('#hot-chocolate');
+    
+    function alertClick(evt){
+        console.dir(evt);
+    }
+
+    espresso.addEventListener('click',function() {makeCoffee('espresso');});
+    
+    function alertClick(evt){
+        console.dir(evt);
+    }
+
+    latte.addEventListener('click',function() {makeCoffee('latte');});
+    
+    function alertClick(evt){
+        console.dir(evt);
+    }
+
+    hot_chocolate.addEventListener('click',function() {makeCoffee('hot-chocolate');});
+
+////////////// in JQuery //////////////
+
+    // let coffeeImage;
+    // coffeeImage = $('#coffee-image');
+    // coffeeImage.attr('src','static/coffee_beans.jpg');
+
+    // let drinksOrdered = [];
+
+    // function makeCoffee(drinkType) {
+
+    //     drinksOrdered.push(drinkType);
+    //     console.log(drinksOrdered);
+
+    //     setTimeout(function() {
+    //         coffeeImage.attr('src','static/coffee_machine.jpg');},3000);
+    //     setTimeout(function() {
+    //         coffeeImage.attr('src', 'static/coffee_mug.jpg');},5000);
+
+        
+    // }
+
+    // coffeeImage.on('click', function() {makeCoffee('brew');});
 
 
 
